@@ -1,0 +1,44 @@
+.header__container-images{
+    position: relative;
+}
+.card{
+    position: absolute;
+    left: 9%;
+    top: 45%;
+    width: 35%;
+    height: auto;
+}
+
+
+.header__image-global{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1050px) {
+    .header__image-global{
+        height: auto;
+        margin: 0px auto;
+    }
+}
+@media screen and (max-width: 920px) {
+    .header__image-global{
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 420px) {
+    .header__image-global{
+        width: 250px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .header__image-global{
+        width: 140px;
+    }
+}
+
+
+

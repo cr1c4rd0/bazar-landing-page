@@ -1,0 +1,43 @@
+/* Font-site */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+/* @font-face{ */
+  /* font-family: 'SF-Pro-Display'; */
+  /* src: url(../SFProDisplay/SFProDisplay/SF-Pro-Display-Heavy.otf); */
+/* } */
+
+/* var env */
+:root{
+  --first-color-text:#023047;
+  --second: #456878;
+  --background-orange: #fb8500;
+  --border-tickets: #008059;
+  --background-blue-sky: #f0f3f4;
+  --text-white: #ffffff;
+  --text-footer: #b9c5cc;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  }
+html {
+  scroll-behavior: smooth;
+  }
+
+html,
+body {
+  font-family:'SF-Pro-Display','Poppins', sans-serif;
+}
+ul {
+  list-style: none;
+}
+li{
+  /* list-style: none; */
+  text-decoration: none;
+  margin-top: 10px   ;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

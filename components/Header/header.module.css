@@ -1,0 +1,130 @@
+.header{
+    width: 100vw;
+    height: 700px;
+    background-image: url(../../public/assets/background.png);
+}
+/* este es util para hacer el menu styke */
+.navbar__space{
+    height: 120px;
+}
+.section__header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    margin: 10px 1.5rem;
+
+}
+.container__texts{
+    max-width: 473px;
+}
+.hr{
+    width: 60px;
+    height: 6px;
+    background-color: #FB8500;
+    border: 1px solid transparent;
+    font-weight: 900;
+}
+.header__title{
+    font-weight: 800;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #023047 ;
+}
+.header__subtitle{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #456878 ;
+}
+/* button */
+.button-orange{
+    width: 165px;
+    height: 48px;
+    border-radius: 4px;
+    border: 0px solid transparent;
+    background-color: #FB8500;
+    color: #fff;
+    margin: 30px 0px;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/* .button-orange:hover{
+    transform: scale(1.1);
+} */
+/* image */
+.container__header-image{
+    width: 400px;
+    min-width: 500px;
+    position: relative;
+}
+.header__image-global{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1050px) {
+    .header{
+        width: 100vw;
+        height: auto;
+    }
+    .container__header-image{
+        margin-top: 30px;
+        min-width: 300px;
+    }
+    .header__image-global{
+        height: auto;
+        margin: 0px auto;
+    }
+}
+@media screen and (max-width: 920px) {
+    .header__title{
+        font-weight: 800;
+        font-size: 42px;
+        text-transform: uppercase;
+        color: #023047 ;
+    }
+    .header__subtitle{
+        font-family: SF Pro Display;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: left;
+        color: #456878 ;
+    }
+    .header__image-global{
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .button-orange{
+        margin-top: 36px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .header__image-global{
+        width: 250px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .header__title{
+        font-weight: 800;
+        font-size: 40px;
+        
+    }
+    .container__header-image{
+        min-width: 160px;
+        width: auto;
+    }
+    .header__image-global{
+        width: 140px;
+    }
+}
+
+
+
