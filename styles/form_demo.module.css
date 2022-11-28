@@ -1,0 +1,55 @@
+.form__demo-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+/* left */
+.form__demo-article{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+/* rigth */
+.form__demo-images{
+    width: 50%;
+    position: relative;
+}
+.form__background-coffee{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.form__logo{
+    width: 205px;
+    height: 51px;
+    top: 28px;
+    left: calc(50% - 105px);
+    z-index: 1;
+    position: absolute;
+}
+@media screen and (max-width:1440px) {
+    .form__background-coffee{
+        width: 100%;
+        height: 120vh;
+        object-fit: cover;
+    }
+}
+/* opcion 1 */
+@media screen and (max-width:912px) {
+    .form__demo-container{
+        background-image: url(../public/assets/cafe.svg);
+    }
+    .form__demo-images{
+        display: none;
+    }
+    .form__logo{
+        display: none;
+    }
+    .form__demo-article{
+        width: 100vw;
+        z-index: 100;
+    }
+}
