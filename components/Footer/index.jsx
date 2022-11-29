@@ -31,20 +31,18 @@ const index = () => {
           <Link href="https://medium.com/@Bazar_Network"><i className="fa-brands fa-medium"></i></Link>
         </li>
       </ul>
-      <div className={styles['socialNetworks__poweredBy']}>
-        <p className={styles['socialNetworks__text']}>Powered by</p>
+      <div className={styles['socialNetworks__container-logos-partners']}>
         <div className={styles['socialNetwork__container__poweredBy-img-section1']}>
+          <p className={styles['socialNetworks__text']}>Powered by</p>
           <Image src={LiskLogo}
             width={2280}
             height={2280}
             className={styles['footer__lisk']}
           />
+        </div>
+        <div className={styles['socialNetwork__container__poweredBy-img-section1']}>
           {/* descomentar para agregar imagen chainlink */}
-          {/* <Image src={chainlink}
-            width={2280}
-            height={2280}
-            className={styles['footer__lisk']}
-          /> */}
+          <p className={styles['socialNetworks__text']}>A participant of</p>
           <Image src={chainlink}
           width={2280}
           height={2280}
@@ -160,14 +158,17 @@ const index = () => {
     </section>
 
     {/* section 4 */}
-    <section className={styles['poweredBy__lisk']}>
-      <p className={styles['socialNetworks__text']}>Powered by</p>
+    <section className={styles['poweredBy__partners-section-4']}>
       <div className={styles['socialNetwork__container-poweredBy-img']}>
+        <p className={styles['socialNetworks__text']}>Powered by</p>
         <Image src={LiskLogo}
           width={2280}
           height={2280}
           className={styles['footer__lisk']}
         />
+      </div>
+      <div className={styles['socialNetwork__container-poweredBy-img']}>
+        <p className={styles['socialNetworks__text']}>A participant of</p>
         <Image src={chainlink}
           width={2280}
           height={2280}
