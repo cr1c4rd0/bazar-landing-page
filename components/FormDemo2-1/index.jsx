@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './formDemo2-1.module.css';
 import { useForm } from "react-hook-form";
-import { IndustryInput, CountryInput } from '../IndustryInput'
 import Link from 'next/link';
 
 

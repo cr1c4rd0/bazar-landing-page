@@ -2,7 +2,6 @@ import styles from '../styles/form_demo.module.css'
 import Image from 'next/image'
 import coffee from '../public/assets/cafe.svg'
 import Logo from '../public/assets/Logo-white.svg'
-// import FormDemo from '../components/FormDemo'
 import FormDemo from '../components/FormDemo2-1'
 
 const demo = () => {
