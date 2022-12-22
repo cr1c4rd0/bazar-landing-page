@@ -1,5 +1,5 @@
 {
-  "name": "bazar",
+  "name": "bazar-network",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.39.1",
-    "react-select": "^5.6.0"
+    "react-select": "^5.6.0",
+    "sweetalert2": "^11.6.16"
   }
 }

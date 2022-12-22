@@ -2,16 +2,52 @@ import React, { useState } from 'react';
 import styles from './formDemo2-1.module.css';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
+import Swal from 'sweetalert2';
 
 
 
+const contactUsDemo = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/contactus';
 
 
 const index = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = (data, ) => {
-    // data suscripcion peticion demo
-    console.log(data)
+  // function create user POST
+  const onSubmit = async ( data, e ) => {
+    try{
+      const response = await fetch(`${contactUsDemo}`,{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          "name": data.name,
+          "email": data.email,
+          "industry": data.industry,
+          "country": data.country,
+          "estimated_quantity_to_buy_or_sell": data.quantity
+        })
+      })
+    // response.json from backend
+    const dataResult = await response.json();
+    console.log(dataResult);
+    // create modal here
+    if ( response.status == 200 ) {
+      Swal.fire({
+        icon: `success`,
+        title: `fine!`,
+        text: `¡The record has been successfully stored`,
+        showConfirmButton: false,
+        timer: 7000
+      })
+    };
+    }catch(e){
+      // 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'user could not be created',
+      })
+      console.log(`catch: ${e}`)
+    }
+    e.stopPropagation();
   };
 
   const regExp = {
@@ -360,8 +396,6 @@ const index = () => {
 
         </div>
 
-
-
         <div className={styles['form__demo-container-support']}>
           <label className={styles['form__demo-support']}>Are you having problems with this method? please contact <br/> 
             <Link 
@@ -389,7 +423,6 @@ const index = () => {
         </div>
         {errors.privacyPolicy?.type === 'required' && <span className={styles['form__demo-error']}>⚠ privacy policy is required</span>}
 
-
         <label className={styles['form__demo-terms-of-use-marketing']}>To opt-out of receivingg marketing or sales communications from Bazar after submitting this information, please
           <Link href="/opt-out" className={styles['form__demo-terms-of-use-link']}> visit this page </Link>
         </label>
@@ -399,8 +432,6 @@ const index = () => {
           className={styles['form__button-create']} 
         />
       </form>
-
-
 
     </section>
   )

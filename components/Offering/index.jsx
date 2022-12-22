@@ -1,5 +1,8 @@
 import styles from './offering.module.css'
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
+
+const subscribeUpdates = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/subscribe-updates';
 
 const index = () => {
   const regExp = {
@@ -7,9 +10,40 @@ const index = () => {
     phone: /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm
   }
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => {
+  const onSubmit = async ( data, e ) => {
+    try{
+      const response = await fetch(`${subscribeUpdates}`,{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json; charset=UTF-8'},
+        body: JSON.stringify({
+          "name": data.name,
+          "email": data.email,
+          "phone": data.phone,
+          "message": data.message
+        })
+      })
+      const dataResult = response.json();
+      console.log(` try: ${data}`);
+      console.log(` try: ${dataResult}`);
+      if (dataResult.status == 200){
+        Swal.fire({
+          icon: `success`,
+          title: `fine!`,
+          text: `¡The record has been successfully stored`,
+          showConfirmButton: false,
+          timer: 7000
+        });
+      }
+    }catch(e){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `El usuario no puede ser creado por ${e}. ¡Intentalo nuevamente`,
+      })
+      console.log(e)
+      console.log(` catch: ${JSON.stringify(data)}`);
+    }
     // aqui ira el fetch de la DB para suscripciones a actualizaciones plataforma
-    console.log(data);
   };
   
   return (
@@ -24,7 +58,7 @@ const index = () => {
 
           <div className={styles['offering__container-input-name']}>
             <label className={styles['offering__form-label-name']}>Name</label>
-            <input className={styles['offering__form-input-name']}  {...register("name",{
+            <input type='text' className={styles['offering__form-input-name']}  {...register("name",{
               required:true,
               minLength: 8,
             })} />
@@ -41,7 +75,7 @@ const index = () => {
             })} />
             {/* phone */}
             <label className={styles['offering__form-label-phone']}>Phone</label>
-            <input type="number" className={styles['offering__form-input-phone']}  {...register("phone",{
+            <input type='text' className={styles['offering__form-input-phone']}  {...register("phone",{
               required:true,
               minLength: 7,
               pattern: regExp.phone
@@ -60,7 +94,7 @@ const index = () => {
 
           <div className={styles['offering__container-input-textArea']}>
             <label className={styles['offering__form-label-textArea']}>Message</label>
-            <textarea className={styles['offering__form-input-textArea']}  {...register("message")} />
+            <textarea type='text' className={styles['offering__form-input-textArea']}  {...register("message")} />
           </div>
           
           
