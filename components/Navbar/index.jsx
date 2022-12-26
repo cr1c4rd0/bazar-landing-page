@@ -8,6 +8,9 @@ import Logo from '../../public/assets/Logo.svg'
 
 const navbar = () => {
   const { clicked, setClicked } = useContext(UseContext);
+  const handleClicked = () => {
+    setClicked(false);
+  }
 
   return (
     <nav className={ styles['navbar']}>
@@ -21,38 +24,38 @@ const navbar = () => {
         <ul className={ clicked ? styles['active'] : styles['navbar__list']}>
 
           <li className={styles['navbar__list-item']}>
-            <Link href="#AnyTradePlatform">
+            <Link href="#AnyTradePlatform" onClick={()=> handleClicked}>
               Why Bazar
             </Link>
           </li>
 
           <li className={styles['navbar__list-item']}>
-            <Link href="#TradeWithFullControl">
+            <Link href="#TradeWithFullControl" onClick = {()=> handleClicked}>
               Solutions
             </Link>
           </li>
 
           <li className={styles['navbar__list-item']}>
-            <Link href="#Offering">
+            <Link href="#Offering" onClick = {()=> handleClick}>
               News
             </Link>
           </li>
           
           {/* estos son los otros items del menu */}
           {/* <li className={styles['navbar__list-item']}>
-            <Link href="/">
+            <Link href="/" onClick = {()=> handleClick}>
               Resources
             </Link>
           </li> */}
           
           {/* <li className={styles['navbar__list-item']}>
-            <Link href="/">
+            <Link href="/" onClick = {()=> handleClick}>
               Company
             </Link>
           </li> */}
           
           {/* <li className={styles['navbar__list-item']}>
-            <Link href="/">
+            <Link href="/" onClick = {()=> handleClick}>
               Support
             </Link>
           </li> */}
