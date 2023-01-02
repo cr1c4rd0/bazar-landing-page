@@ -3,51 +3,39 @@ import styles from './formDemo2-1.module.css';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
-
-
-const contactUsDemo = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/contactus';
-
+const contactUsDemo = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/contactus';//process.env.REACT_BAZAR_CONTACT_US_URL;
 
 const index = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  // function create user POST
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async ( data, e ) => {
-    try{
-      const response = await fetch(`${contactUsDemo}`,{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          "name": data.name,
-          "email": data.email,
-          "industry": data.industry,
-          "country": data.country,
-          "estimated_quantity_to_buy_or_sell": data.quantity
-        })
+    await axios.post(`${contactUsDemo}`,{
+            name: data.name,
+            email: data.email,
+            industry: data.industry,
+            country: data.country,
+            estimated_quantity_to_buy_or_sell: data.quantity
+        }).then(function (response) {            
+            const dataResult = response;
+            console.log(dataResult);
+            if ( response.status == 200 ) {
+                Swal.fire({
+                    icon: `success`,
+                    title: `fine!`,
+                    text: `¡The record has been successfully stored`,
+                    showConfirmButton: false,
+                    timer: 7000
+                });
+        }
+      }).catch(function (err) {
+         Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El registro no puede ser creado por ${e}. ¡Intentalo nuevamente',
+            })
+        console.log(`catch: ${e}`)
       })
-    // response.json from backend
-    const dataResult = await response.json();
-    console.log(dataResult);
-    // create modal here
-    if ( response.status == 200 ) {
-      Swal.fire({
-        icon: `success`,
-        title: `fine!`,
-        text: `¡The record has been successfully stored`,
-        showConfirmButton: false,
-        timer: 7000
-      })
-    };
-    }catch(e){
-      // 
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'user could not be created',
-      })
-      console.log(`catch: ${e}`)
-    }
-    e.stopPropagation();
   };
 
   const regExp = {

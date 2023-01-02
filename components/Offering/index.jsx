@@ -1,48 +1,43 @@
 import styles from './offering.module.css'
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
-const subscribeUpdates = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/subscribe-updates';
+const subscribeUpdates = 'https://h26589t53i.execute-api.us-east-2.amazonaws.com/contact/subscribe-updates';//process.env.REACT_BAZAR_SUBSCRIBE_UPDATES_URL;
 
 const index = () => {
   const regExp = {
     email: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
     phone: /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm
   }
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async ( data, e ) => {
-    try{
-      const response = await fetch(`${subscribeUpdates}`,{
-        method: 'POST',
-        headers: {'Content-Type': 'application/json; charset=UTF-8'},
-        body: JSON.stringify({
-          "name": data.name,
-          "email": data.email,
-          "phone": data.phone,
-          "message": data.message
+    await axios.post(`${subscribeUpdates}`, {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            message: data.message
+        }).then(function (response){
+            const dataResult = response;
+            console.log(dataResult);
+            if (dataResult.status == 200){
+                Swal.fire({
+                    icon: `success`,
+                    title: `fine!`,
+                    text: `¡The record has been successfully stored`,
+                    showConfirmButton: false,
+                    timer: 7000
+                });
+            }
+        }).catch(function (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `El registro no puede ser creado por ${e}. ¡Intentalo nuevamente`,
+              })
+            console.log(err)
+            console.log(` catch: ${JSON.stringify(data)}`);
         })
-      })
-      const dataResult = response.json();
-      console.log(` try: ${data}`);
-      console.log(` try: ${dataResult}`);
-      if (dataResult.status == 200){
-        Swal.fire({
-          icon: `success`,
-          title: `fine!`,
-          text: `¡The record has been successfully stored`,
-          showConfirmButton: false,
-          timer: 7000
-        });
-      }
-    }catch(e){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: `El usuario no puede ser creado por ${e}. ¡Intentalo nuevamente`,
-      })
-      console.log(e)
-      console.log(` catch: ${JSON.stringify(data)}`);
-    }
     // aqui ira el fetch de la DB para suscripciones a actualizaciones plataforma
   };
   
