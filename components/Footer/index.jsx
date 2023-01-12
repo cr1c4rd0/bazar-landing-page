@@ -42,12 +42,12 @@ const index = () => {
         </div>
         <div className={styles['socialNetwork__container__poweredBy-img-section1']}>
           {/* descomentar para agregar imagen chainlink */}
-          <p className={styles['socialNetworks__text']}>A participant of</p>
+          {/* <p className={styles['socialNetworks__text']}>A participant of</p>
           <Image src={chainlink}
           width={2280}
           height={2280}
           className={styles['footer__chainlink']}
-          />
+          /> */}
         </div>
       </div>
     </section>
@@ -168,12 +168,12 @@ const index = () => {
         />
       </div>
       <div className={styles['socialNetwork__container-poweredBy-img']}>
-        <p className={styles['socialNetworks__text']}>A participant of</p>
+        {/* <p className={styles['socialNetworks__text']}>A participant of</p>
         <Image src={chainlink}
           width={2280}
           height={2280}
           className={styles['footer__chainlink']}
-        />
+        /> */}
       </div>
     </section>
 

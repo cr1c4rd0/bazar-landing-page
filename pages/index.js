@@ -28,7 +28,7 @@ export default function Home() {
         <TradeWithFullControl/>
         <Sustainable/>
         <Offering/>
-        <News/>
+        {/* <News/> */}
         
       </main>
       <footer>
