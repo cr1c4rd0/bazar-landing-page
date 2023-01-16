@@ -20,7 +20,7 @@ const index = () => {
             <div className={styles['container__texts']}>
               <hr className={styles['hr']}/>
               <h1 className={styles['header__title']}>TRADE AND SHIP <br/>SUSTAINABLY</h1>
-              <h4 className={styles['header__subtitle']}>Trade physical commodities from sustainable verified sources, with cryptography grade agreements, low-cost transactions, and real-time information about everything</h4>
+              <h4 className={styles['header__subtitle']}>Trade physical commodities from sustainable verified sources using blockchain technology, with cryptographic-grade agreements, low-cost transactions, and real-time information on all aspects of the trade.</h4>
               <Link href="/demo" >
                 <button className={styles['button-orange']}>
                   REQUEST A DEMO

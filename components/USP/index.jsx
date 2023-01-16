@@ -22,7 +22,7 @@ const index = () => {
           </svg>
           {/* text */}
           <h2>Authenticity</h2>
-          <p>We verify each network participant to guarantee transparency, safety, and real nature restoration when trading valuable assets on a global scale.</p>
+          <p>We thoroughly verify each network participant to ensure transparency, safety, and real-world conservation efforts when trading valuable assets on a global scale.</p>
         </article>
 
         <article className={styles['usp__article']}>
@@ -33,7 +33,7 @@ const index = () => {
           </svg>
           {/* texts */}
           <h2>Trust</h2>
-          <p>We provide the right tools to help you create trusted relationships with clients and partners of the network with reliable market data and immutable proof of existence for assets. </p>
+          <p>We provide the necessary tools to assist you in building trustworthy relationships with clients and partners within the network, through access to reliable market data and immutable proof of existence for assets.</p>
         </article>
         
         <article className={styles['usp__article']}>
@@ -54,7 +54,7 @@ const index = () => {
           </svg>
           {/* texts */}
           <h2>Connectivity</h2>
-          <p>We offer a secure transactional hub where you choose your partners to perform the goals of the modern merchant. Whether is financial, legal, or logistics service. You will find it here.</p>
+          <p>We offer a secure transactional hub where you can select your partners to meet the needs of the modern merchant, whether it be financial, legal or logistics services, you will find it on our platform.</p>
         </article>
       </div>
     </section>

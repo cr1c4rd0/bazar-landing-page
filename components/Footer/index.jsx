@@ -17,7 +17,7 @@ const index = () => {
         height={180}
         className={styles['footer__logo']}
       />
-      <p className={styles['socialNetworks__text']}>Trade physical commodities from sustainable verified sources.</p>
+      <p className={styles['socialNetworks__text']}>Trade physical commodities from verified sustainable sources.</p>
       <ul className={styles['socialNetworks__social-icons']}>
 
         <li className={styles['socialNetworks__twitter']}>
