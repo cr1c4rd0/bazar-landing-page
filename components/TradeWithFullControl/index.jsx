@@ -27,22 +27,22 @@ const index = () => {
         <article className={styles['tradeWFC__article']}>
           <article className={styles['tradeWFC__container-texts']}>
             <h2 className={styles['tradeWFC__subtitle']}>TOKENIZE</h2>
-            <p className={styles['tradeWFC__text']}>Give a truthful representation of the ownership of your assets in a reliable blockchain infrastructure.</p>
+            <p className={styles['tradeWFC__text']}>tokenize assets and provide a reliable and transparent representation of ownership of your products on a blockchain infrastructure.</p>
           </article>
 
           <article className={styles['tradeWFC__container-texts']}>
             <h2 className={styles['tradeWFC__subtitle']}>CONNECT</h2>
-            <p className={styles['tradeWFC__text']}> Create transparent relations with sellers, buyers,logistic providers, insurance agencies, and financial institutions.</p>
+            <p className={styles['tradeWFC__text']}> establish transparent relationships with sellers, buyers, logistics providers, insurance agencies, and financial institutions.</p>
           </article>
 
           <article className={styles['tradeWFC__container-texts']}>
             <h2 className={styles['tradeWFC__subtitle']}>TRADE</h2>
-            <p className={styles['tradeWFC__text']}>Use crypto or fiat to buy from suppliers and pay for services within the network with real-time data from the commodity markets.</p>
+            <p className={styles['tradeWFC__text']}>use crypto or fiat currency to purchase from suppliers and pay for services within the network, with access to real-time commodity market data.</p>
           </article>
 
           <article className={styles['tradeWFC__container-texts']}>
             <h2 className={styles['tradeWFC__subtitle']}>SHIP</h2>
-            <p className={styles['tradeWFC__text']}>Keep full traceability with our logistics partners or choose your own, integrate IoT devices data and external sources at your convenience.</p>
+            <p className={styles['tradeWFC__text']}>maintain full traceability of your products through our logistics partners or by choosing your own, with the option to integrate IoT device data and external sources.</p>
           </article>
         </article>
       </article>

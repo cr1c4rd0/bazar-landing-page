@@ -45,7 +45,7 @@ const index = () => {
     <section className={styles["offering"]} id="Offering">
       <div className={styles['offering__container-title']}>
         <hr className={styles['hr']}/>
-        <h1 className={styles['offering__title']}>Subscribe to receive updates about our platform launch</h1>
+        <h1 className={styles['offering__title']}>Sign up to receive updates on the launch of our platform.</h1>
       </div>
 
       <div className={styles['offering__form']}>

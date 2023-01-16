@@ -8,7 +8,7 @@ const index = () => {
       <hr className={styles['hr']}/>
       <div className={styles['sustainable__container-title']}>
         <h1 className={styles['sustainable__title']}>Sustainable Verified Businesses</h1>
-        <h3 className={styles['sustainable__sub-title']}>We take an active role in sustainability, first by improving our customer´s financial health, then by measuring their progress in carbon mitigation</h3>
+        <h3 className={styles['sustainable__sub-title']}>We prioritize sustainability by first improving the financial well-being of our customers, and then by monitoring their progress in reducing carbon emissions.</h3>
       </div>
 
       {/* images cards */}
@@ -46,7 +46,7 @@ const index = () => {
           </svg>
           {/* text */}
           <h2>IoT Integration</h2>
-          <p>Our platform integrates the data from multiple sources to each asset blockchain, enabling access to information from farming field operations and transport status</p>
+          <p>Our platform integrates data from multiple sources into the blockchain for each asset, providing access to information on farming operations and transportation status.</p>
         </article>
         
         <article className={styles['sustainable__article']}>
@@ -63,7 +63,7 @@ const index = () => {
           </svg>
           {/* text */}
           <h2>Certification Agencies</h2>
-            <p>We connect experts with your business to help you reach better product standards, plant better trees, or certify your current sustainability practices.</p>
+            <p>We connect businesses with experts to help them achieve higher product standards, plant more trees or certify their current sustainability practices.</p>
         </article>
         
         <article className={styles['sustainable__article']}>
@@ -81,7 +81,7 @@ const index = () => {
           </svg>
           {/* text */}
           <h2>Carbon Mitigation</h2>
-            <p>Reducing a big part of the 13 billions tons of CO2 produced annually by supply chains is the ultimate goal. Measuring it all with real-time data is the first step.</p>
+            <p>Reducing a significant portion of the 13 billion tons of CO2 produced annually by supply chains is our ultimate goal. Measuring it all in real-time data is the first step towards achieving this.</p>
         </article>
 
       </article>
